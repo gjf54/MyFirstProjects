@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../scripts/cookie.js"></script>
+    <script src="../scripts/script.js"></script>
+    <title>Profile</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="profile" id="profile">
+                <div class="profile-element">
+                    <h3>Your account info</h3>
+                    <a href="/">Back to home</a>
+                </div>
+                <div class="profile-element">
+                    <label for="profile-name">Name</label>
+                    <input id="profile-name" type="text">
+                </div>
+                <div class="profile-element">
+                    <label for="profile-login">Login</label>
+                    <input id="profile-login" type="text">
+                </div>
+                <div class="profile-element">
+                    <label for="profile-mail">Your email</label>
+                    <input id="profile-mail" type="email">
+                </div>
+                <div class="profile-element">
+                    <label for="profile-password">New password</label>
+                    <input id="profile-password" type="password">
+                </div>
+                <div class="profile-element">
+                    <label for="profile-password">Repeat new password</label>
+                    <input id="profile-password-repeat" type="password">
+                </div>
+                <div class="profile-element-button">
+                    <button onclick="log_out()" id="logout"><span>Log out</span></button>
+                    <button onclick="delete_account()" id="delete_account"><span>Delete account</span></button>
+                </div>
+                <div class="form">
+                    <div class="form-element">
+                        <h3>Confirm changes</h3>
+                    </div>
+                    <div class="form-element">
+                        <label for="password">Password</label>
+                        <input id="password" type="password">
+                    </div>
+                    <div class="form-element" id="error" hidden><span></span></div>
+                    <div class="form-element">
+                        <button onclick="update()"><span>Save changes</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="table" id="table">
+                <span>success update</span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        generate_profile()
+    </script>
+</body>
+
+</html>
