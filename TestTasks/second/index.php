@@ -1,8 +1,8 @@
 <?php
 session_start();
-$_SESSION['try_login'] = 0;
 
 
+//маршрутизатор
 $url = explode('/', $_SERVER['REQUEST_URI']);
 
 switch ($url[1]) {

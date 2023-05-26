@@ -58,6 +58,10 @@ nav a {
     justify-content: center;
 }
 
+.form-element a#form-link {
+    text-align: center;
+}
+
 .form-element:last-child {
     align-items: center;
 }
@@ -87,6 +91,7 @@ nav a {
 
 .form-element button {
     background: #5F4;
+    position: relative;
     border: none;
     width: 60%;
     border-radius: 20px;

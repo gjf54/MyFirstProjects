@@ -18,10 +18,14 @@ function createRequest(url, data) {
                     if (!user.error) {
                         //объявление куки с данными о пользователе
                         setCookie('user', JSON.stringify(user), 1)
+                        eraseCookie("try_login")
+                        eraseCookie("block_login")
                         console.log("login completed");
                         //запуск success-таблицы
                         success_message("form", "/profile")
                     } else {
+                        console.log(parseInt(getCookie("try_login")) + 1)
+                        updateCookie("try_login", parseInt(getCookie("try_login")) + 1, 1)
                         var span = document.querySelector("#error>span")
                         var div = document.getElementById("error")
                         div.innerHTML = user.error
@@ -56,6 +60,7 @@ function createRequest(url, data) {
                 case "delete":
                     if (!user.error) {
                         eraseCookie("user")
+                        eraseCookie
                         window.location.href = "/"
                     } else {
                         var span = document.querySelector("#error>span")
@@ -87,11 +92,34 @@ function log_in() {
     var password = get_value_by_id("password")
     //объявление типа эвента
     type = "login"
+
+    if (getCookie("try_login") == null) {
+        setCookie("try_login", 1, 1)
+    } else {
+        if (parseInt(getCookie("try_login")) > 3) {
+            setCookie("block_login", 1, (1 / (24 * 60)))
+            updateCookie()
+            var span = document.querySelector("#error>span")
+            var div = document.getElementById("error")
+            div.innerHTML = "The passwords do not match"
+            div.removeAttribute("hidden")
+        }
+    }
+
+
     //объявление url исполняющего скрипта
     let url = "http://aa.com/php/login.php"
     data = JSON.stringify({ "login": login, "password": password, "type": type })
     //вызов метода на создание запроса
-    createRequest(url, data)
+    if (getCookie("block_login") == null) {
+        createRequest(url, data)
+    } else {
+        updateCookie("try_login", 1, 1)
+        var span = document.querySelector("#error>span")
+        var div = document.getElementById("error")
+        div.innerHTML = "You got three mistakes. Try one more after one minute"
+        div.removeAttribute("hidden")
+    }
 }
 
 function registr() {

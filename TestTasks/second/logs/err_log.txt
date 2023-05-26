@@ -1,4 +1,0 @@
-mysqli_sql_exception: Table 'secondtaskdb.users' doesn't exist in C:\Users\111\Desktop\TestTasks\second\php\delete.php:10
-Stack trace:
-#0 C:\Users\111\Desktop\TestTasks\second\php\delete.php(10): mysqli->prepare('DELETE FROM use...')
-#1 {main}

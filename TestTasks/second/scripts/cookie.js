@@ -20,3 +20,7 @@ function getCookie(name) {
 function eraseCookie(name) {
     document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
+function updateCookie(name, value, days) {
+    eraseCookie(name)
+    setCookie(name, value, days)
+}

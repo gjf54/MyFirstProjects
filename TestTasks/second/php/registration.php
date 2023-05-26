@@ -46,6 +46,16 @@ try {
 
     echo json_encode($user);
 } catch (Exception $e) {
+
+    $rexpr = '/login_Unique/i';
+
+    if (preg_match($rexpr, $e)) {
+        $user['error'] = 'Login is already exist';
+        $user['type'] = $data->type;
+        echo json_encode($user);
+        die();
+    }
+
     $user['type'] = $data->type;
     $user['error'] = 'Unknown error. Try later';
     $file = "../logs/err_log.txt";
