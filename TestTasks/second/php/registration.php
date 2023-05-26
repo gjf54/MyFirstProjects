@@ -33,6 +33,15 @@ if (!preg_match($rexpr, $data->login)) {
     die();
 }
 
+$rexpr = '/^\\S+@\\S+\\.\\S+$/';;
+
+if (!preg_match($rexpr, $data->mail)) {
+    $user['error'] = 'incorrect email';
+    $user['type'] = $data->type;
+    echo json_encode($user);
+    die();
+}
+
 try {
     $sql = 'INSERT INTO user (name,login,password,mail) VALUES (?,?,?,?)';
     $stmt = $mysqli->prepare($sql);
