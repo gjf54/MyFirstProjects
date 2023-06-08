@@ -1,0 +1,39 @@
+nav {
+    margin-top: 30px;
+    width: 100%;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav #nav_title_link {
+    text-decoration: underline;
+}
+
+nav span {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    background: #26F;
+    padding: 30px;
+    border-radius: 20px;
+    color: #FFF;
+}
+
+nav #nav_title {
+    background: #000;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav .row div {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 767px) {
+    nav .nav_item {
+        margin-top: 30px;
+    }
+}

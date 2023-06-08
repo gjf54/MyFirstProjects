@@ -1,0 +1,21 @@
+.header {
+    flex-direction: column;
+    text-align: center;
+    height: 500px;
+}
+
+#header_title {
+    font-size: 55px;
+    font-weight: bold;
+    color: #000;
+}
+
+#header_title>span {
+    color: #26F;
+}
+
+
+#header_text {
+    color: #999;
+    font-size: 25px;
+}

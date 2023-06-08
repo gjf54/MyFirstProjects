@@ -1,0 +1,28 @@
+.container {
+    margin: 0px;
+}
+
+div[class^="info_"] {
+    display: flex;
+    flex-direction: column;
+}
+
+.info_credentials_field {
+    margin-bottom: 30px;
+}
+
+.info_credentials_field .field_title {
+    color: #888;
+    font-size: 20px;
+}
+
+.info_image img {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}
+
+.info_credentials_field .field_value {
+    font-weight: bold;
+    font-size: 24px;
+}
