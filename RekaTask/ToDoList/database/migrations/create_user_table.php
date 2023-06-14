@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('user', function (Blueprint $table) {
             $table->charset = 'utf8mb4';
             $table->id('id');
-            $table->string('name');
+            $table->string('name', 32);
             $table->string('login', 32)->unique();
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('avatar')->default('/imgs/User_imgs/Avatars/default.gif');
+            $table->string('avatar')->default('default.gif');
         });
     }
 

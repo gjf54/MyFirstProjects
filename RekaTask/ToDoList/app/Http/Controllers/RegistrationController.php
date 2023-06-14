@@ -37,7 +37,7 @@ class RegistrationController extends Controller
             'password_repeat' => ['same:password'],
         ]);
 
-        $user = User::create([
+        User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'login' => $request['login'],

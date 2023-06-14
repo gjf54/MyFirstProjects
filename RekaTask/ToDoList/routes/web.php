@@ -33,6 +33,8 @@ Route::get('/todo', [ProfileController::class, 'todo'])->name('todo');
 Route::prefix('profile')->group(function () {
     Route::get('/', [ProfileController::class, 'index'])->name('profile')->middleware('check_if_not_auth');
     Route::get('/info', [ProfileController::class, 'info'])->name('info');
+    Route::get('/info/edit', [ProfileController::class, 'info_edit'])->name('info_edit');
+    Route::post('/info/edit', [ProfileController::class, 'info_update'])->name('info_update');
     Route::get('/todo', [ProfileController::class, 'todo'])->name('todo');
     Route::get('/contribution', [ProfileController::class, 'contribution'])->name('contribution');
 });

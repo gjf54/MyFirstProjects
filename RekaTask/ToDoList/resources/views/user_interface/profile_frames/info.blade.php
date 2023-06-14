@@ -2,12 +2,17 @@
 
 @section('content')
 @foreach($users as $user)
+
+@php
+$user->avatar = 'imgs/User_imgs/Avatars/' . $user->avatar;
+@endphp
+
 <div class="info">
-    <div class="row">
-        <div class="info_image col-sm-6 mx-auto">
+    <div class="row justify-content-left">
+        <div class="info_image col-sm-4">
             <img src="{{ asset($user->avatar) }}" alt="User avatar">
         </div>
-        <div class="info_credentials col-sm-6">
+        <div class="info_credentials col-sm-4">
             <div class="info_credentials_field">
                 <span class="field_title">Name</span>
                 <span class="field_value">{{ $user->name }}</span>
@@ -21,7 +26,7 @@
                 <span class="field_value">{{ $user->email }}</span>
             </div>
             <div class="info_credentials_field">
-                <a href="#">Edit..</a>
+                <a href="{{ route('info_edit') }}">Edit..</a>
             </div>
         </div>
     </div>

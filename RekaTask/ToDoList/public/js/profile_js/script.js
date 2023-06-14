@@ -1,3 +1,5 @@
+//switch styles for navigation in frames of profile
+
 function switch_selected(id) {
     let myLast = document.querySelector("div[selected]")
     let current = document.getElementById(id)
